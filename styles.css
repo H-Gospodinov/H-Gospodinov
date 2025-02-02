@@ -18,7 +18,95 @@ html {
 body {
     width: 100%;
     background-color: #fff;
-    font-family: sans-serif;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC');
     text-align: center;
+    font-family: 'segoe ui', ubuntu, helvetica, arial, sans-serif;
     color: #121922;
+    /*color: #172839;*/
+    animation: slide 1.84s linear infinite;
+}
+
+/* ANIMATION, original by kootoopas*/
+/* change to 0% = reverse direction*/
+
+@-webkit-keyframes slide {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes slide {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes slide {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes slide {
+  100% {
+    background-position: 50px 50px;
+  }
+} /*end*/
+
+
+.container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
+    row-gap: 30px;
+    max-width: 1920px;
+    min-height: 100%;
+    margin: auto;
+    padding: 45px 10px;
+}
+.header {
+    display: flex;
+    flex-flow: column;
+    row-gap: 20px;
+}
+.header h1 {
+    font-size: 80px;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+.header h2 {
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+.intro {
+    display: flex;
+    flex-flow: column;
+    row-gap: 40px;
+}
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 30px;
+    margin: 5px 0 -5px;
+}
+.skills img {
+    width: 50px;
+}
+.summary {
+    max-width: 1000px;
+    font-size: 18px;
+    line-height: 30px;
+}
+.contact {
+    align-self: center;
+    min-width: 220px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ad6;
+    padding: 16px 20px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #222;
+    cursor: pointer;
 }
