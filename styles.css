@@ -111,5 +111,82 @@ body {
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #222;
+    transition: 0.5s ease;
     cursor: pointer;
+}
+.contact:hover {
+    background-color: #be6;
+}
+
+.projects h3 {
+    display: block;
+    margin: 25px 0 55px;
+    padding-left: 15px;
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 25px;
+    text-transform: uppercase;
+}
+.projects .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    width: 1500px;
+    max-width: 100%;
+    margin: auto;
+}
+.project {
+    display: grid;
+    border: 2px solid #ad6;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fffb;
+}
+.project .name {
+    grid-area: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 20px;
+    font-weight: 300;
+    font-size: 30px;
+    letter-spacing: 1px;
+    cursor: default;
+}
+.project .buttons {
+    grid-area: 1 / 1;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    background-color: #fff;
+    padding: 0 35px;
+    transition: 0.5s ease;
+    transform: translateY(100%);
+}
+.project:hover .buttons {
+    transform: translateY(0);
+}
+.project .buttons a {
+    flex-grow: 1;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #666;
+    text-decoration: none;
+    transition: 0.8s ease;
+}
+.project .buttons .demo {
+    background-color: #ad6;
+}
+.project .buttons .source {
+    background-color: #ccc;
+}
+.project .buttons a:hover {
+    color: #444;
+}
+.project .buttons .demo:hover {
+    background-color: #be6;
+}
+.project .buttons .source:hover {
+    background-color: #d7d7d7;
 }
