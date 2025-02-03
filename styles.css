@@ -80,7 +80,13 @@ body {
 .intro {
     display: flex;
     flex-flow: column;
+    align-items: center;
     row-gap: 40px;
+}
+.picture {
+    display: none;
+    margin-bottom: -10px;
+    border-radius: 50%;
 }
 .skills {
     display: flex;
@@ -88,9 +94,6 @@ body {
     justify-content: center;
     column-gap: 30px;
     margin: 5px 0 -5px;
-}
-.skills img {
-    width: 50px;
 }
 .summary {
     max-width: 1000px;
