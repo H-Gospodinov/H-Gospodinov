@@ -6,7 +6,7 @@
     padding: 0 0;
     outline: none;
 }
-*::before, *::after {
+*:before, *:after {
     box-sizing: border-box;
 }
 
@@ -102,7 +102,8 @@ body {
 
 .modal {
     display: none;
-    position: absolute;
+    position: fixed;
+    top: 40%;
     z-index: 1;
     width: 450px;
     max-width: 95%;
@@ -120,20 +121,16 @@ body {
 .modal:before {
     content: "";
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    top: 0; right: 0;
+    bottom: 0; left: 0;
     z-index: -1;
     background-color: #000c;
 }
 .modal:after {
     content: "";
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    top: 0; right: 0;
+    bottom: 0; left: 0;
     z-index: -1;
     box-shadow: 0 0 20px #0003;
     border-radius: 5px;
@@ -143,8 +140,7 @@ body {
     display: grid;
     place-items: center;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 0; right: 0;
     width: 40px;
     height: 40px;
     overflow: hidden;
@@ -162,14 +158,14 @@ body {
     height: 2px;
     background-color: #000;
 }
-.modal .close:hover {
-    transform: rotate(360deg);
-}
 .modal .close:before {
     transform: rotate(-45deg);
 }
 .modal .close:after {
     transform: rotate(45deg);
+}
+.modal .close:hover {
+    transform: rotate(360deg);
 }
 .modal .content {
     display: flex;
@@ -183,8 +179,53 @@ body {
     text-align: left;
     line-height: 24px;
 }
+.modal .details p {
+    display: flex;
+}
 .modal .location {
     margin-bottom: 5px;
+    font-weight: 500;
+}
+.modal span:before,
+.modal span:after {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+.modal .asprnd {
+    max-width: 16px;
+    overflow: hidden;
+}
+.modal .asprnd:before,
+.modal .asprnd:after {
+    content: "\0040";
+}
+.modal .asprnd i {
+    display: none;
+}
+
+.obfsctn-1 .in:after {
+    content: attr(data-a1);
+}
+.obfsctn-1 .in:before {
+    content: attr(data-a2);
+}
+.obfsctn-1 .out:after {
+    content: attr(data-b1);
+}
+.obfsctn-1 .out:before {
+    content: attr(data-b2);
+}
+.obfsctn-2 .in:after {
+    content: attr(data-a1);
+}
+.obfsctn-2 .in:before {
+    content: attr(data-a2);
+}
+.obfsctn-2 .out:after {
+    content: attr(data-b1);
+}
+.obfsctn-2 .out:before {
+    content: attr(data-b2);
 }
 
 .projects h3 {
