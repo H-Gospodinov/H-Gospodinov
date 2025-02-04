@@ -9,6 +9,7 @@
 *::before, *::after {
     box-sizing: border-box;
 }
+
 a {
     color: inherit;
     text-decoration: none;
@@ -29,30 +30,11 @@ body {
     /*color: #172839;*/
     animation: slide 1.84s linear infinite;
 }
-
-/* ANIMATION, original by kootoopas*/
-/* change to 0% = reverse direction*/
-
-@-webkit-keyframes slide {
-  100% {
-    background-position: 50px 50px;
-  }
-}
-@-moz-keyframes slide {
-  100% {
-    background-position: 50px 50px;
-  }
-}
-@-o-keyframes slide {
-  100% {
-    background-position: 50px 50px;
-  }
-}
 @keyframes slide {
-  100% {
+  100% { /*0% = reverse*/
     background-position: 50px 50px;
   }
-} /*end*/
+}
 
 .container {
     display: flex;
