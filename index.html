@@ -16,7 +16,6 @@
             <h2>Front-end web developer and designer</h2>
         </header>
         <div class="intro">
-            <img class="picture" src="images/picture.jpg" alt="profile pic" width="80" height="80">
             <div class="skills">
                 <img src="images/html.svg" alt="HTML" title="HTML5" width="50" height="50">
                 <img src="images/css.svg" alt="CSS" title="CSS3" width="50" height="50">
@@ -33,7 +32,18 @@
             <p class="summary">My name is Hristo Gospodinov, and I have 14 years of professional experience as a web developer in the e-commerce field,
                                primarily as an HTML & CSS & JS coder and web designer. I'm currently learning how to use modern Javascript frameworks.
                                This is my private demo page where I share small training projects I completed as a part of various upskilling programs.</p>
-            <button class="contact">Contact</button>
+            <button class="contact" id="open">Contact</button>
+            <div class="modal">
+                <button class="close" id="close"></button>
+                <div class="content">
+                    <img class="picture" src="images/picture.jpg" alt="profile pic" width="80" height="80">
+                    <div class="details">
+                        <h4 class="location">I'm based in Sofia, Bulgaria.</h4>
+                        <p class="contact1">...</p>
+                        <p class="contact2">...</p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="projects">
             <h3>Demo Projects</h3>
@@ -86,5 +96,14 @@
             </div>
         </footer>
     </div>
+    <script>
+        const modalBox = document.querySelector('.modal');
+        document.querySelector('#open').addEventListener('click', () => {
+            modalBox.classList.add('active');
+        });
+        document.querySelector('#close').addEventListener('click', () => {
+            modalBox.classList.remove('active');
+        });
+    </script>
 </body>
 </html>

@@ -47,6 +47,7 @@ body {
     margin: auto;
     padding: 45px 10px;
 }
+
 .header {
     display: flex;
     flex-flow: column;
@@ -62,16 +63,12 @@ body {
     font-weight: 300;
     letter-spacing: 1px;
 }
+
 .intro {
     display: flex;
     flex-flow: column;
     align-items: center;
     row-gap: 40px;
-}
-.picture {
-    display: none;
-    margin-bottom: -10px;
-    border-radius: 50%;
 }
 .skills {
     display: flex;
@@ -102,6 +99,94 @@ body {
 .contact:hover {
     background-color: #be6;
 }
+
+.modal {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 450px;
+    max-width: 95%;
+    box-shadow: 0 0 20px #0003;
+    padding: 15px 20px;
+    transition: 0.5s ease;
+}
+.modal.active {
+    display: block;
+    opacity: 1;
+    @starting-style {
+        opacity: 0;
+    } /*start value goes last*/
+}
+.modal:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #000c;
+}
+.modal:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    box-shadow: 0 0 20px #0003;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.modal .close {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border: none;
+    background: none;
+    font-size: 0;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+.modal .close:before,
+.modal .close:after {
+    content: "";
+    grid-area: 1 / 1;
+    width: 16px;
+    height: 2px;
+    background-color: #000;
+}
+.modal .close:hover {
+    transform: rotate(360deg);
+}
+.modal .close:before {
+    transform: rotate(-45deg);
+}
+.modal .close:after {
+    transform: rotate(45deg);
+}
+.modal .content {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+.modal .picture {
+    border-radius: 50%;
+}
+.modal .details {
+    text-align: left;
+    line-height: 24px;
+}
+.modal .location {
+    margin-bottom: 5px;
+}
+
 .projects h3 {
     display: block;
     margin: 25px 0 55px;
@@ -173,6 +258,7 @@ body {
 .project .buttons .source:hover {
     background-color: #d7d7d7;
 }
+
 .footer .links {
     display: flex;
     column-gap: 10px;
